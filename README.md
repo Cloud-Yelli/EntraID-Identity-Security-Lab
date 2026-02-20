@@ -13,7 +13,7 @@ Mise en place d'une structure de 10 utilisateurs multi-régions avec automatisat
 - **Automatisation** : Utilisation de la syntaxe avancée pour capturer les profils de management.
 
 > **📸 Preuve Technique : Syntaxe de la règle dynamique**
-> ![Règle de syntaxe dynamique](screenshots/rule.jpeg)
+> ![Règle de syntaxe dynamique](Screenshots/rule.jpeg)
 
 ---
 
@@ -24,7 +24,7 @@ Délégation de droits granulaire et protection des comptes critiques.
 - **Test de Protection** : Vérification de l'impossibilité pour un Admin User de modifier un Global Admin.
 
 > **📸 Preuve Technique : Échec de la réinitialisation (Protection hiérarchique)**
-> ![Erreur de privilèges RBAC](screenshots/reset-password.jpeg)
+> ![Erreur de privilèges RBAC](Screenshots/reset-password.jpeg)
 
 ---
 
@@ -34,13 +34,13 @@ Analyse des politiques de sécurité "Mandatory MFA" de Microsoft et diagnostic 
 - **Le Paradoxe MFA** : Identification d'un statut "Disabled" sur le portail Legacy alors que la sécurité est appliquée au niveau du Tenant.
 
 > **📸 Preuve Technique : Statut Legacy MFA (Affichage Trompeur)**
-> ![Statut Legacy MFA](screenshots/MFA-status.jpeg)
+> ![Statut Legacy MFA](Screenshots/MFA-status.jpeg)
 
 - **Analyse des Logs** : Validation du succès de l'authentification forte (Authenticator) et décomposition des facteurs.
 
 > **📸 Preuve Technique : Analyse du flux d'authentification (MFA Validé)**
-> ![Log de connexion résumé](screenshots/sign-in.jpeg)
-> ![Log de connexion détaillé](screenshots/sign-in1.jpeg)
+> ![Log de connexion résumé](Screenshots/sign-in.jpeg)
+> ![Log de connexion détaillé](Screenshots/sign-in1.jpeg)
 > *On confirme ici la validation successive du mot de passe et du second facteur (code OATH).*
 
 ---
@@ -52,6 +52,6 @@ Industrialisation de l'attribution des ressources via le Microsoft 365 Admin Cen
 - **Héritage** : Vérification que les utilisateurs reçoivent leurs droits via l'appartenance au groupe.
 
 > **📸 Preuve Technique : Assignation au groupe et statut hérité**
-> ![Assignation au groupe](screenshots/licence-group.jpeg)
-> ![Statut de licence hérité](screenshots/inherited-licence.jpeg)
+> ![Assignation au groupe](Screenshots/licence-group.jpeg)
+> ![Statut de licence hérité](Screenshots/inherited-licence.jpeg)
 > *L'utilisateur reçoit ses licences automatiquement via l'appartenance au groupe.*
