@@ -43,6 +43,6 @@ Analyse critique des nouvelles politiques de sécurité Microsoft 2025.
 - **Résolution** : Configuration et validation des méthodes d'authentification forcées pour les rôles privilégiés.
 
 > **📸 Preuve Technique : Analyse approfondie du flux d'authentification**
-> ![Log de connexion résumé](screenshots/sign-in.jpeg)
-> ![Log de connexion détaillé](screenshots/sign-in1.jpeg)
+> ![Log de connexion résumé](Screenshots/sign-in.jpeg)
+> ![Log de connexion détaillé](Screenshots/sign-in1.jpeg)
 > *Analyse du flux : On confirme ici la validation successive du premier facteur (token claim) et du second facteur (code OATH), garantissant une connexion sécurisée selon les standards modernes.*
