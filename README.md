@@ -25,7 +25,7 @@ Délégation de droits sans compromettre la sécurité globale du tenant.
 - **Test de Protection** : Vérification de la hiérarchie Entra ID (Impossibilité pour un Admin User de modifier/supprimer un Global Admin).
 
 > **📸 Preuve Technique : Blocage de sécurité RBAC**
-> ![Erreur de privilèges RBAC](screenshots/reset-password.jpeg)
+> ![Erreur de privilèges RBAC](Screenshots/reset-password.jpeg)
 > *Tentative de réinitialisation de mot de passe du Global Admin par le User Admin : Accès refusé par Azure.*
 
 ---
@@ -37,11 +37,11 @@ Analyse critique des nouvelles politiques de sécurité Microsoft 2025.
 - **Analyse** : Étude du paradoxe entre le portail Legacy et le "Mandatory MFA" imposé par Microsoft.
 
 > **📸 Preuve Technique : Statut Legacy MFA (Trompeur)**
-> ![Statut Legacy MFA](screenshots/MFA-status.jpeg)
+> ![Statut Legacy MFA](Screenshots/MFA-status.jpeg)
 > *Bien que désactivé ici, le MFA est forcé par les politiques globales de 2025.*
 
 - **Résolution** : Configuration et validation des méthodes d'authentification forcées pour les rôles privilégiés.
 
 > **📸 Preuve Technique : Log de connexion réussi avec MFA (Authenticator)**
-> ![Log de connexion réussi](screenshots/sign-in.jpeg)
+> ![Log de connexion réussi](Screenshots/sign-in.jpeg)
 > *Analyse du flux : Validation du mot de passe + Validation du second facteur (MFA).*
