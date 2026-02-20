@@ -10,8 +10,13 @@ Ce laboratoire vise à démontrer la maîtrise de la gestion des identités, de 
 Mise en place d'une structure de 10 utilisateurs multi-régions avec automatisation des accès.
 
 - **Groupes Dynamiques** : Configuration de règles basées sur les attributs (`City`, `JobTitle`).
-  - *Exemple de syntaxe utilisée* : `(user.jobTitle -contains "Manager") -or (user.jobTitle -contains "Director")`
 - **Automatisation** : Suppression du provisionnement manuel pour les localisations géographiques.
+
+> **📸 Preuve Technique : Règle de groupe dynamique avancée**
+> ![Règle de syntaxe dynamique](screenshots/dynamic-rule.jpg)
+> *Ici, on voit l'utilisation de l'opérateur `-contains` pour capturer tous les profils de management.*
+
+---
 
 ## 🛡️ Phase 2 : Principe du Moindre Privilège (RBAC)
 Délégation de droits sans compromettre la sécurité globale du tenant.
@@ -19,9 +24,24 @@ Délégation de droits sans compromettre la sécurité globale du tenant.
 - **Délégation** : Attribution du rôle `User Administrator` à un compte technicien (Marc Lefebvre).
 - **Test de Protection** : Vérification de la hiérarchie Entra ID (Impossibilité pour un Admin User de modifier/supprimer un Global Admin).
 
+> **📸 Preuve Technique : Blocage de sécurité RBAC**
+> ![Erreur de privilèges RBAC](screenshots/rbac-error.jpg)
+> *Tentative de réinitialisation de mot de passe du Global Admin par le User Admin : Accès refusé par Azure.*
+
+---
+
 ## 🔍 Phase 3 : Troubleshooting & Sécurité (The "MFA" Case)
 Analyse critique des nouvelles politiques de sécurité Microsoft 2025.
 
 - **Diagnostic** : Identification du blocage MFA via les `Sign-in Logs`.
-- **Analyse** : Étude du conflit entre le SSPR (Self-Service Password Reset) et les politiques de "Mandatory MFA" imposées par Microsoft pour les portails d'administration.
+- **Analyse** : Étude du paradoxe entre le portail Legacy et le "Mandatory MFA" imposé par Microsoft.
+
+> **📸 Preuve Technique : Statut Legacy MFA (Trompeur)**
+> ![Statut Legacy MFA](screenshots/mfa-status.jpg)
+> *Bien que désactivé ici, le MFA est forcé par les politiques globales de 2025.*
+
 - **Résolution** : Configuration et validation des méthodes d'authentification forcées pour les rôles privilégiés.
+
+> **📸 Preuve Technique : Log de connexion réussi avec MFA (Authenticator)**
+> ![Log de connexion réussi](screenshots/signin-log-success.jpg)
+> *Analyse du flux : Validation du mot de passe + Validation du second facteur (MFA).*
