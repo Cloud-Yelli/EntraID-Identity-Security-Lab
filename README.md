@@ -55,3 +55,17 @@ Industrialisation de l'attribution des ressources via le Microsoft 365 Admin Cen
 > ![Assignation au groupe](Screenshots/licence-group.jpeg)
 > ![Statut de licence hérité](Screenshots/inherited-licence.jpeg)
 > *L'utilisateur reçoit ses licences automatiquement via l'appartenance au groupe.*
+
+---
+
+## 🌍 Phase 5 : Sécurité Géographique (Geofencing via Conditional Access)
+Mise en place d'une stratégie de "Zero Trust" basée sur la localisation réseau.
+
+- **Objectif** : Bloquer toute tentative de connexion provenant de zones géographiques non autorisées (hors France/Canada).
+- **Implémentation** : Création d'une "Named Location" regroupant les pays autorisés et application d'une règle de blocage globale (Exclude mode).
+- **Test de pénétration** : Simulation d'une attaque depuis les États-Unis via VPN Proton.
+
+> **📸 Preuve Technique : Blocage géographique actif**
+> ![Log de refus CA](Screenshots/CA-logs.jpeg)
+> ![Détails du flux de blocage](Screenshots/CA-logs1.jpeg)
+> *Analyse : Le code d'erreur 53003 confirme que la politique d'accès conditionnel a interrompu la session malgré un mot de passe correct.*
