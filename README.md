@@ -69,3 +69,15 @@ Mise en place d'une stratégie de "Zero Trust" basée sur la localisation résea
 > ![Log de refus CA](Screenshots/CA-logs.jpeg)
 > ![Détails du flux de blocage](Screenshots/CA-logs1.jpeg)
 > *Analyse : Le code d'erreur 53003 confirme que la politique d'accès conditionnel a interrompu la session malgré un mot de passe correct.*
+
+---
+
+## 🔐 Phase 6 : Protection ciblée du Management
+Mise en place d'une couche de sécurité supplémentaire pour les comptes à hauts privilèges.
+
+- **Logique** : Forcer le MFA spécifiquement pour le groupe dynamique `Management`.
+- **Résultat** : Superposition réussie des politiques de sécurité.
+
+> **📸 Preuve Technique : Validation de la politique personnalisée**
+> ![Succès MFA Management](Screenshots/mfa-management-log.jpeg)
+> *Preuve : On observe le statut "Success" pour la politique `REQUIRE_MFA_FOR_MANAGEMENT` lors de la connexion de l'utilisateur.*
