@@ -106,7 +106,7 @@ Jonction d'appareils Windows 11 dans un environnement Cloud Natif via Microsoft 
 ## 🛠️ Phase 9 : Automatisation des Droits Locaux
 Solution d'ingénierie pour automatiser les privilèges administrateurs sans intervention du support.
 
-- **Problématique** : Friction lors de l'onboarding d'utilisateurs spécifiques nécessitant des droits admin locaux.
+- **Problématique** : Friction lors de l'onboarding d'utilisateurs nécessitant des droits admin locaux.
 - **Solution** : Implémentation d'une politique `Local User Group Membership` via Intune Endpoint Security.
 - **Résultat** : Injection automatique de l'utilisateur dans le groupe local `Administrators` dès la première connexion.
 - **Sécurité** : Activation de **Microsoft Entra LAPS** pour sécuriser les comptes de secours locaux.
@@ -120,12 +120,25 @@ Solution d'ingénierie pour automatiser les privilèges administrateurs sans int
 ## 🛡️ Phase 10 : Gouvernance de la Conformité (Compliance Policies)
 Mise en place d'un "contrôle technique" automatique pour garantir l'hygiène du parc informatique.
 
-- **Objectif** : Détecter et isoler les appareils dont la configuration de sécurité a été altérée (ex: désactivation du pare-feu par un administrateur local).
+- **Objectif** : Détecter et isoler les appareils dont la configuration de sécurité a été altérée.
 - **Configuration** : Création d'une politique exigeant l'activation du Pare-feu et de l'Antivirus.
-- **Résultat** : Détection immédiate de la non-conformité par Intune après synchronisation suite à la désactivation manuelle du firewall sur la VM.
+- **Résultat** : Détection de la non-conformité par Intune suite à la désactivation manuelle du firewall sur la VM.
 
 > **📸 Preuve Technique : Cycle de vie de la conformité**
 > ![Configuration de la politique Firewall](Screenshots/Screenshot_22-2-2026_8561_intune.microsoft.com.jpeg)
 > ![Désactivation manuelle du pare-feu sur le client](Screenshots/085915.png)
 > ![Appareil déclaré Non-compliant dans Intune](Screenshots/Screenshot_22-2-2026_972_intune.microsoft.com.jpeg)
 > ![Détail de l'échec de la règle](Screenshots/Screenshot_22-2-2026_9634_intune.microsoft.com.jpeg)
+
+---
+
+## 🔒 Phase 11 : Enforcement Zero Trust (Accès Conditionnel + Compliance)
+L'accès aux données est conditionné par la santé en temps réel de l'appareil.
+
+- **Mécanisme** : Liaison entre Microsoft Intune (santé) et Entra ID (accès).
+- **Logique** : Utilisation d'un filtre de device (`device.isCompliant -eq False`) pour cibler les terminaux à risque.
+- **Résultat** : L'accès aux ressources est automatiquement révoqué si l'appareil est marqué non-conforme.
+
+> **📸 Preuve Technique : Le bouclage Zero Trust**
+> ![Filtre de non-conformité](Screenshots/Screenshot_22-2-2026_94241_entra.microsoft.com.jpeg)
+> ![Politique de blocage active](Screenshots/Screenshot_22-2-2026_94214_entra.microsoft.com.jpeg)
