@@ -143,3 +143,4 @@ L'accès aux données est conditionné par la santé en temps réel de l'apparei
 > ![Filtre de non-conformité](Screenshots/Screenshot_22-2-2026_94241_entra.microsoft.com.jpeg)
 > ![Politique de blocage active](Screenshots/Screenshot_22-2-2026_94214_entra.microsoft.com.jpeg)
 > ![Message d'erreur d'accès refusé](Screenshots/094953.png)
+Test de réversibilité validé : le rétablissement de la conformité sur le terminal lève instantanément les restrictions d'accès, prouvant la réactivité du moteur de sécurité Microsoft 365.
