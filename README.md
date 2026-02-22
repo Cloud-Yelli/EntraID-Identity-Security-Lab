@@ -142,3 +142,5 @@ L'accès aux données est conditionné par la santé en temps réel de l'apparei
 > **📸 Preuve Technique : Le bouclage Zero Trust**
 > ![Filtre de non-conformité](Screenshots/Screenshot_22-2-2026_94241_entra.microsoft.com.jpeg)
 > ![Politique de blocage active](Screenshots/Screenshot_22-2-2026_94214_entra.microsoft.com.jpeg)
+
+> ![Message d'erreur d'accès refusé](Screenshots/09444.png)
