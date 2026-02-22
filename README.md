@@ -2,7 +2,7 @@
 *Simulation d'une infrastructure d'entreprise hybride sur un tenant Microsoft 365 E5.*
 
 ## 📌 Objectifs du Projet
-Démontrer la maîtrise de la gestion des identités, de l'automatisation des accès, de la sécurisation RBAC et de l'implémentation de stratégies Zero Trust (Conditional Access).
+Démontrer la maîtrise de la gestion des identités, de l'automatisation des accès, de la sécurisation RBAC, de l'implémentation de stratégies Zero Trust (Conditional Access) et de la gestion de parc via Intune.
 
 ---
 
@@ -87,3 +87,30 @@ Démonstration de la défense proactive face aux comportements suspects.
 > ![Smart Lockout message](Screenshots/access-denied1.png)
 > ![Analyse du log de risque 53003](Screenshots/logs2.jpeg)
 > *Note : Le log confirme que malgré un mot de passe valide, l'accès est révoqué en raison du contexte de connexion non-conforme.*
+
+---
+
+## 💻 Phase 8 : Modern Endpoint Management (MDM Enrollment)
+Jonction d'appareils Windows 11 dans un environnement Cloud Natif via Microsoft Intune.
+
+- **Processus** : Configuration de l'OOBE (Out Of Box Experience) avec jointure Entra ID directe.
+- **Sécurité** : Application stricte du MFA lors de l'enrôlement et limitation du nombre d'appareils par utilisateur.
+- **Autorité MDM** : Configuration des scopes MDM/MAM pour garantir une gestion complète du parc.
+
+> **📸 Preuve Technique : Enrôlement réussi avec MFA**
+> ![MFA requis à l'enrôlement](Screenshots/Capture_d’écran_2026-02-22_080905.png)
+> ![Bureau utilisateur managé](Screenshots/Capture_d’écran_2026-02-22_081212.jpg)
+
+---
+
+## 🛠️ Phase 9 : Automatisation des Droits Locaux (Cas d'usage R&D)
+Solution d'ingénierie pour automatiser les privilèges administrateurs sans intervention du support.
+
+- **Problématique** : Friction lors de l'onboarding du département R&D nécessitant des droits admin locaux.
+- **Solution** : Implémentation d'une politique `Local User Group Membership` via Intune Endpoint Security.
+- **Résultat** : Injection automatique de l'utilisateur dans le groupe local `Administrators` dès la première connexion.
+- **Sécurité** : Activation de **Microsoft Entra LAPS** pour sécuriser les comptes de secours locaux.
+
+> **📸 Preuve Technique : Vérification de l'escalade de privilèges**
+> ![Statut administrateur vérifié](Screenshots/Capture_d’écran_2026-02-22_082120.png)
+> ![Détails du groupe local Administrators](Screenshots/Capture_d’écran_2026-02-22_081503.png)
