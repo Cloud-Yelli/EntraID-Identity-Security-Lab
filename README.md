@@ -103,10 +103,10 @@ Jonction d'appareils Windows 11 dans un environnement Cloud Natif via Microsoft 
 
 ---
 
-## 🛠️ Phase 9 : Automatisation des Droits Locaux (Cas d'usage R&D)
+## 🛠️ Phase 9 : Automatisation des Droits Locaux
 Solution d'ingénierie pour automatiser les privilèges administrateurs sans intervention du support.
 
-- **Problématique** : Friction lors de l'onboarding du département R&D nécessitant des droits admin locaux.
+- **Problématique** : Friction lors de l'onboarding d'utilisateurs spécifiques nécessitant des droits admin locaux.
 - **Solution** : Implémentation d'une politique `Local User Group Membership` via Intune Endpoint Security.
 - **Résultat** : Injection automatique de l'utilisateur dans le groupe local `Administrators` dès la première connexion.
 - **Sécurité** : Activation de **Microsoft Entra LAPS** pour sécuriser les comptes de secours locaux.
