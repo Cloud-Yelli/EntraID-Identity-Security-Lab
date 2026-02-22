@@ -114,3 +114,18 @@ Solution d'ingénierie pour automatiser les privilèges administrateurs sans int
 > **📸 Preuve Technique : Vérification de l'escalade de privilèges**
 > ![Statut administrateur vérifié](Screenshots/Capture_d’écran_2026-02-22_082120.png)
 > ![Détails du groupe local Administrators](Screenshots/Capture_d’écran_2026-02-22_081503.png)
+
+---
+
+## 🛡️ Phase 10 : Gouvernance de la Conformité (Compliance Policies)
+Mise en place d'un "contrôle technique" automatique pour garantir l'hygiène du parc informatique.
+
+- **Objectif** : Détecter et isoler les appareils dont la configuration de sécurité a été altérée (ex: désactivation du pare-feu par un administrateur local).
+- **Configuration** : Création d'une politique exigeant l'activation du Pare-feu et de l'Antivirus.
+- **Résultat** : Détection immédiate de la non-conformité par Intune après synchronisation suite à la désactivation manuelle du firewall sur la VM.
+
+> **📸 Preuve Technique : Cycle de vie de la conformité**
+> ![Configuration de la politique Firewall](Screenshots/Screenshot_22-2-2026_8561_intune.microsoft.com.jpeg)
+> ![Désactivation manuelle du pare-feu sur le client](Screenshots/085915.png)
+> ![Appareil déclaré Non-compliant dans Intune](Screenshots/Screenshot_22-2-2026_972_intune.microsoft.com.jpeg)
+> ![Détail de l'échec de la règle](Screenshots/Screenshot_22-2-2026_9634_intune.microsoft.com.jpeg)
