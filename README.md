@@ -99,7 +99,7 @@ Jonction d'appareils Windows 11 dans un environnement Cloud Natif via Microsoft 
 
 > **📸 Preuve Technique : Enrôlement réussi avec MFA**
 > ![MFA requis à l'enrôlement](Screenshots/Capture_d’écran_2026-02-22_080905.png)
-> ![Bureau utilisateur managé](Screenshots/Capture_d’écran_2026-02-22_081212.jpg)
+> ![Bureau utilisateur managé](Screenshots/81212.png)
 
 ---
 
