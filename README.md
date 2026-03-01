@@ -144,3 +144,43 @@ L'accès aux données est conditionné par la santé en temps réel de l'apparei
 > ![Politique de blocage active](Screenshots/Screenshot_22-2-2026_94214_entra.microsoft.com.jpeg)
 > ![Message d'erreur d'accès refusé](Screenshots/094953.png)
 Test de réversibilité validé : le rétablissement de la conformité sur le terminal lève instantanément les restrictions d'accès, prouvant la réactivité du moteur de sécurité Microsoft 365.
+
+---
+
+## 📦 Phase 12 : Modern Application Management (Win32 & Store)
+Industrialisation du déploiement logiciel via Microsoft Intune.
+
+- **Standardisation MSI** : Déploiement de VLC media player via le format MSI. L'avantage majeur est l'extraction automatique du `Product Code` pour une détection native et sans erreur.
+- **Packaging EXE** : Déploiement de Google Chrome et TeamViewer via le format Win32 (.intunewin). Configuration des commutateurs silencieux (`/silent /install`) pour une installation transparente sans interaction utilisateur.
+- **Portail d'Entreprise** : Déploiement ciblé du "Company Portal" via le Microsoft Store (New) en mode Système pour permettre le self-service logiciel aux utilisateurs.
+
+> **📸 Preuve Technique : Statut du déploiement et commandes**
+> ![Statut global des applications](Screenshots/Screenshot_1-3-2026_91417_intune.microsoft.com.jpeg)
+> ![Détails d'installation Chrome](Screenshots/Screenshot_1-3-2026_8621_intune.microsoft.com.jpeg)
+> ![Assignation requise au groupe de test](Screenshots/Screenshot_1-3-2026_8642_intune.microsoft.com.jpeg)
+> ![Succès du déploiement Chrome](Screenshots/Screenshot_1-3-2026_8551_intune.microsoft.com.jpeg)
+
+---
+
+## 🤖 Phase 13 : Automatisation du Packaging & Troubleshooting
+Optimisation du cycle de vie des applications et résolution des erreurs de détection.
+
+### 1. Script d'automatisation PowerShell
+Pour accélérer le passage du format source (.exe/.msi) au format Intune (.intunewin), j'ai conçu un script de packaging par lot. Ce script scanne récursivement les dossiers sources et génère les packages prêts à l'upload.
+
+```powershell
+# 🛠️ Script : PrepareApps.ps1
+$BasePath   = "C:\Intune"
+$SourcePath = "$BasePath\Source"
+$OutputPath = "$BasePath\Output"
+$PrepTool   = "$BasePath\IntuneWinAppUtil.exe"
+
+Get-ChildItem -Path $SourcePath -Directory | ForEach-Object {
+    $AppName = $_.Name
+    $Installer = Get-ChildItem -Path $_.FullName -File | Where-Object { $_.Extension -match "exe|msi" } | Select-Object -First 1
+    
+    if ($Installer) {
+        Write-Host "Packaging de : $AppName" -ForegroundColor Cyan
+        & $PrepTool -c $_.FullName -s $Installer.Name -o $OutputPath -q
+    }
+}
